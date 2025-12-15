@@ -174,12 +174,12 @@ nav {
   font-size: clamp(16px, 1.5vw, 24px);
 }
 
-/* ---------- ABOUT ---------- */
+/* --------------------- ABOUT ---------- */
 #about {
   background-image: url(Photos/aboutme-profile.jpg);
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: no-repeat;
   min-height: 100vh;
   padding: 0;
@@ -190,6 +190,10 @@ nav {
   gap: 40px;
   align-items: center;
   padding-top: 2rem;
+}
+p strong{
+  font-size: clamp(22px, 1.8vw, 34px);
+  font-family: sans-serif;
 }
 .social-icons a {
   border-radius: 10px;
@@ -212,7 +216,7 @@ nav {
 /* ---------- SERVICES ---------- */
 #services {
 }
-.h3service{
+.h3service {
   color: #222;
 }
 .services {
@@ -329,8 +333,8 @@ footer {
   .burger {
     display: flex;
   }
-  .mobile-menu{
-    background-color: dimgray;
+  .mobile-menu {
+    background-color: #111;
     width: 40%;
   }
   .hero {
@@ -340,11 +344,37 @@ footer {
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
+  .intro p {
+    text-align: justify;
+  }
+  .intro h2{
+   padding-top: 3rem;
+  }
+  #intro-about {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+  }
+  #intro-about p {
+    padding: 1rem;
+  }
+  p strong{
+    
+    line-height: 1;
+  }
+  .social-icons a{
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
   #about {
-    background-image: url(Photos/aboutme-profile-mobile.jpg);
+    background-image: url(Photos/aboutme-profile-mobile.png);
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
+    background-attachment: scroll;
   }
 }
