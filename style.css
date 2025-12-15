@@ -30,6 +30,7 @@ section {
   margin: auto;
   background-color: #222;
   min-height: auto;
+  padding: 1rem;
 }
 
 h1,
@@ -46,8 +47,9 @@ p {
 }
 
 .btn {
+  font-size: clamp(14px, 1.2vw, 24px);
   display: inline-block;
-  padding: 14px 28px;
+  padding: 10px 24px;
   background: #ffbd59;
   color: #222;
   border-radius: 10px;
@@ -89,6 +91,17 @@ nav {
 }
 
 /* ---------- BURGER ---------- */
+/* Burger X animation */
+.burger.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.burger.toggle .line2 {
+  opacity: 0;
+}
+.burger.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
 .burger {
   display: none;
   flex-direction: column;
@@ -137,6 +150,7 @@ nav {
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
+  padding: 0;
 }
 
 .hero-grid {
@@ -161,11 +175,21 @@ nav {
 }
 
 /* ---------- ABOUT ---------- */
+#about {
+  background-image: url(Photos/aboutme-profile.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 0;
+}
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
   align-items: center;
+  padding-top: 2rem;
 }
 .social-icons a {
   border-radius: 10px;
@@ -305,8 +329,19 @@ footer {
   .burger {
     display: flex;
   }
+  .mobile-menu{
+    background-color: dimgray;
+    width: 40%;
+  }
   .hero {
     background-image: url(Photos/mobile-profile.png);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  #about {
+    background-image: url(Photos/aboutme-profile-mobile.jpg);
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;

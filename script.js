@@ -12,13 +12,16 @@ prevBtn.addEventListener('click', () => {
   slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
 });
 
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  burger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-  });
+burger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active'); // toggle menu
+  burger.classList.toggle('toggle');     // toggle X animation
+});
+
+
 
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
