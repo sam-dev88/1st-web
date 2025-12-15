@@ -1,0 +1,314 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ---------- GLOBAL ---------- */
+section {
+  /* max-width: 1100px;*/
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  background-color: #222;
+
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 16px;
+  padding-top: 2rem;
+  text-align: center;
+  color: #ffbd59;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #ffbd59;
+  color: #222;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: green;
+  color: #fff;
+}
+
+/* ---------- NAV ---------- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+/* ---------- BURGER ---------- */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #ffbd59;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* ---------- MOBILE MENU ---------- */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100vh;
+  background: #fff;
+  padding: 80px 30px;
+  transition: right 0.4s ease;
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-size: 1.2rem;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  background-image: url(Photos/home-profile.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.hero-grid {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+}
+.intro {
+  margin: 25% 10%;
+  padding-left: 1rem;
+}
+.intro .hero-name {
+  font-size: clamp(24px, 4vw, 54px);
+  color: #fff;
+}
+
+.hero-p {
+  color: #ffbd59;
+  font-weight: 600;
+  font-size: clamp(16px, 1.5vw, 24px);
+}
+
+/* ---------- ABOUT ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+.social-icons a {
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 40px;
+  box-shadow: 0px 0px 10px #ffbd59;
+  color: #ffbd59;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: transform 0.6s ease, color 0.3s ease;
+  padding: 0 6px;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+  color: green; /* optional: change color on hover */
+  box-shadow: 0px 0px 10px green;
+}
+
+/* ---------- SERVICES ---------- */
+#services {
+}
+.h3service{
+  color: #222;
+}
+.services {
+  display: flex;
+  width: 40%;
+  margin-left: 1.5rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 5rem;
+}
+
+.card {
+  padding: 24px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background: #fafafa;
+  color: #222;
+}
+
+/* ---------- PORTFOLIO ---------- */
+.project {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* ---------- TESTIMONIALS ---------- */
+/* ---------- TESTIMONIALS SLIDER ---------- */
+.testimonial-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.testimonial-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+
+.testimonial-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial {
+  min-width: 250px;
+  flex: 0 0 auto;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+}
+
+.slide-btn.left {
+  left: 10px;
+}
+
+.slide-btn.right {
+  right: 10px;
+}
+
+.slide-btn:hover {
+  background: #4338ca;
+}
+
+/* ---------- CONTACT ---------- */
+form {
+  max-width: 500px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #111;
+  color: #fff;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+  .hero {
+    background-image: url(Photos/mobile-profile.png);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+}

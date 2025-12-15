@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>My Personal Website</title>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="Photos/logo2.png" alt="logo" style="width: 50px; box-shadow: -1px 2px 1px #fff;">
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE SLIDE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#home" class="mobile-link">Home</a></li>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#services" class="mobile-link">Services</a></li>
+      <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>      
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-grid">
+      <div class="intro">
+        <h1 style="color: #fff;">Hi, I’m <span class="hero-name">Samira Omar</span></h1>
+        <p>“A <span class="hero-p">Front-end developer and GHL automation specialist.</span> I design and build
+          websites, funnels, and automated workflows that help businesses attract clients, save time, and grow online.”
+        </p>
+        <a href="#contact" class="btn">Let’s Build Your System</a>
+      </div>
+
+      <div>
+        <!--blank-->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="intro">
+        <img src="Photos/aboutme2.png" alt="About image" style="width: 60%; filter: drop-shadow(0 3px 4px #ffbd59);  max-width: 400px; /* adjust as needed */
+        height: auto;
+        display: block;
+        position: relative;
+        margin-left: 5rem;
+        margin-bottom: 20px;
+        z-index: 1; ">
+      </div>
+      <div class="intro" style="margin-left: 0; z-index: 1; padding: 0; margin-top: 1rem;" >
+        <h2 style="margin-top: 0;">About Me</h2>
+        <p>I’m a front-end developer and GHL automation specialist focused on building complete digital systems. I
+          create fast websites, high-converting funnels, and automated workflows that improve user experience and
+          support business growth.</p>
+
+        <a href="#contact" class="btn">Let’s Build Your System</a>
+
+        <p style="line-height: 4; font-size: large; margin-top: 1rem;"><strong>Follow Me:</strong>
+
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/samira-omar-85082b31a/" target="_blank" title="My LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <a href="https://www.tiktok.com/@shayanor?_t=ZS-90dI6anMOos&_r=1" target="_blank"><i
+              class="fab fa-tiktok"></i></a>
+          <a href="https://github.com/sam-dev88" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.facebook.com/share/17YpUzeGzL/" target="_blank"><i class="fab fa-facebook"></i></a>
+          </a>
+        </div>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3 class="h3service">Website & Funnel Development</h3>
+        <p>I build responsive websites and high-converting funnels using GHL to grow your business online.</p>
+        <div class="services">
+          <img src="Photos/laptop.png" alt="laptop">
+          <img src="Photos/funnel.png" alt="funnel">
+        </div>
+
+      </div>
+      <div class="card">
+        <h3 class="h3service">Automation & Workflow</h3>
+        <p>I automate business processes and workflows in GHL to save time and increase efficiency.</p>
+        <div class="services">
+          <img src="Photos/gear.png" alt="">
+          <img src="Photos/workflow-icon.png" alt="">
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="h3service">Landing Page</h3>
+        <p>I design and create landing pages that convert visitors into leads using GHL.</p>
+        <div class="services" style="width: 70%; margin-left: 3.5rem;">
+          <img src="Photos/landing-page.jpeg" alt="page" >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="grid">
+      <div class="project">
+        <h3>Project One</h3>
+        <p>Personal website focused on clean structure.</p>
+      </div>
+      <div class="project">
+        <h3>Project Two</h3>
+        <p>Responsive landing page with conversion focus.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-container">
+      <button class="slide-btn left" id="prevBtn">&#10094;</button>
+      <div class="testimonial-slider" id="testimonialSlider">
+        <div class="testimonial">“Great work and very professional.”</div>
+        <div class="testimonial">“Clean design and easy communication.”</div>
+        <div class="testimonial">“Fast delivery and excellent design skills.”</div>
+        <div class="testimonial">“Highly recommended for modern website projects.”</div>
+      </div>
+      <button class="slide-btn right" id="nextBtn">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s work together.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>© 2025 Your Name</footer>
+
+  <script src="script.js">
+
+  </script>
+
+</body>
+
+</html>
