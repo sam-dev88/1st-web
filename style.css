@@ -90,6 +90,22 @@ nav .logo {
   gap: 20px;
 }
 
+nav ul li {
+  border: 1px solid #ffbd59;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.6s ease-in-out, background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+nav ul li:hover {
+  background: #ffbd59;
+  color: #222;
+  border: 1px solid green;
+  transform: scale(1.1);
+}
+
 /* ---------- BURGER ---------- */
 /* Burger X animation */
 .burger.toggle .line1 {
@@ -249,9 +265,31 @@ p strong {
   border-radius: 10px;
   padding: 20px;
   background-color: #ffbd59;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.project h3{
+.project h3,
+p {
   color: #222;
+}
+.project h3 {
+  padding: 5 10px;
+  text-align: end;
+}
+.project a {
+  color: green;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 1rem;
+  line-height: 3;
+  transition: transform 0.6s ease-in-out, background-color 0.3s ease,
+    color 0.3s ease;
+  font-size: clamp(15px, 1vw, 24px);
+}
+.project a:hover {
+  color: #222;
+  transform: scale(1.2);
 }
 
 /* ---------- TESTIMONIALS ---------- */
@@ -311,6 +349,21 @@ p strong {
 }
 
 /* ---------- CONTACT ---------- */
+.contact-grid {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+}
+.contact-A,
+.contact-B {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-B p strong {
+  font-size: clamp(16px, 1.2vw, 24px);
+}
 form {
   max-width: 500px;
 }
@@ -383,5 +436,11 @@ footer {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
+  }
+
+  /*--------------contact-mobile-----------*/
+  .get {
+    line-height: 1;
+    margin-top: 2rem;
   }
 }
