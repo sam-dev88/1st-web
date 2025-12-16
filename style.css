@@ -272,6 +272,7 @@ p strong {
 .project h3,
 .project p {
   color: #222;
+  line-height: 1.5;
 }
 .project h3 {
   padding: 5 10px;
