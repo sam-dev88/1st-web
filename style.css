@@ -366,6 +366,7 @@ p strong {
 .contact-B p strong {
   font-size: clamp(16px, 1.2vw, 24px);
 }
+
 form {
   max-width: 500px;
 }
@@ -448,5 +449,13 @@ footer {
   .get {
     line-height: 1;
     margin-top: 2rem;
+  }
+  .contact-B{
+    margin-top: 1rem;
+    text-align: left;
+    border: 1px solid #ffbd59;
+    border-radius: 10px;
+    background-color: #111;
+    box-shadow: 1px 1px 2px #ffbd59;
   }
 }
