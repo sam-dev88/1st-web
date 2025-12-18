@@ -66,3 +66,23 @@ form.addEventListener("submit", (e) => {
       msg.innerHTML = "❌ Failed to send message. Try again later.";
     });
 });
+
+/*-------------------*/
+const button = document.getElementById("button");
+
+function updateButtonText() {
+  if (window.innerWidth <= 768) { // mobile breakpoint
+    button.innerText = "Send";
+  } else {
+    button.innerText = "Send Message";
+  }
+}
+
+// Run on page load
+updateButtonText();
+
+// Run on window resize
+window.addEventListener("resize", updateButtonText);
+
+  
+
