@@ -167,7 +167,12 @@ nav ul li:hover {
   justify-content: center;
   display: flex;
   border-radius: 10px;
-
+  transition: transform 0.6s ease-in-out;
+}
+.mobile-menu ul li:hover{
+  background-color: #ffbd59;
+  transform: scale(1.1);
+  border: 1px solid #fff;
 }
 /* ---------- HERO ---------- */
 .hero {
