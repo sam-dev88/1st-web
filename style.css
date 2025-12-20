@@ -6,8 +6,6 @@
   font-family: sans-serif;
 }
 
-
-
 body {
   line-height: 1.6;
   color: #fff;
@@ -109,8 +107,8 @@ nav ul li {
   cursor: pointer;
   transition: transform 0.6s ease-in-out, background-color 0.3s ease,
     color 0.3s ease;
-    font-size: 12px;
-    font-weight: bold;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 nav ul li:hover {
@@ -171,7 +169,7 @@ nav ul li:hover {
   gap: 24px;
   font-size: 1rem;
 }
-.mobile-menu ul li{
+.mobile-menu ul li {
   border-bottom: 1px solid #ffbd59;
   padding: 5px 5px;
   justify-content: center;
@@ -469,7 +467,10 @@ footer {
     line-height: 1;
     margin-top: 2rem;
   }
-  .contact-B{
+  .about-p {
+    margin: 0 1rem;
+  }
+  .contact-B {
     margin-top: 1rem;
     text-align: left;
     border: 1px solid #ffbd59;
@@ -477,16 +478,13 @@ footer {
     background-color: #111;
     box-shadow: 1px 1px 2px #ffbd59;
   }
-  
-    .btn {
-      display: flex;
-      justify-content: center;
-    }
-    .hero-grid .btn{
-      width: 85%;
-      margin: 0 auto;
-    }
-  }
-  
- 
 
+  .btn {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-grid .btn {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
