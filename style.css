@@ -57,6 +57,16 @@ p {
   border-radius: 10px;
   font-weight: bold;
   transition: 0.3s;
+  animation: scaleLoop 1.5s ease-in-out infinite alternate;
+}
+@keyframes scaleLoop {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 .btn:hover {
@@ -162,18 +172,13 @@ nav ul li:hover {
   font-size: 1rem;
 }
 .mobile-menu ul li{
-  border: 1px solid #ffbd59;
-  padding: 5px 15px;
+  border-bottom: 1px solid #ffbd59;
+  padding: 5px 5px;
   justify-content: center;
   display: flex;
-  border-radius: 10px;
-  transition: transform 0.6s ease-in-out;
+  border-radius: 6px;
 }
-.mobile-menu ul li:hover{
-  background-color: #ffbd59;
-  transform: scale(1.1);
-  border: 1px solid #fff;
-}
+
 /* ---------- HERO ---------- */
 .hero {
   background-image: url(Photos/home-profile.jpg);
