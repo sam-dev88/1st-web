@@ -54,22 +54,20 @@ p {
   color: #222;
   border-radius: 10px;
   font-weight: bold;
-  transition: 0.3s;
-  animation: scaleLoop 1.5s ease-in-out infinite alternate;
+  transition: 
+  transform 0.2s ease,
+  box-shadow 0.2s ease,
+  background 0.2s ease;
 }
-@keyframes scaleLoop {
-  0% {
-    transform: scale(1);
-  }
 
-  100% {
-    transform: scale(1.1);
-  }
-}
 
 .btn:hover {
-  background: green;
+  background: #222;
   color: #fff;
+
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px #ffbd59;
+  
 }
 
 /* ---------- NAV ---------- */
