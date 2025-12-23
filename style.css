@@ -54,12 +54,8 @@ p {
   color: #222;
   border-radius: 10px;
   font-weight: bold;
-  transition: 
-  transform 0.2s ease,
-  box-shadow 0.2s ease,
-  background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
-
 
 .btn:hover {
   background: #222;
@@ -67,7 +63,6 @@ p {
 
   transform: translateY(-2px);
   box-shadow: 0 8px 20px #ffbd59;
-  
 }
 
 /* ---------- NAV ---------- */
@@ -98,22 +93,27 @@ nav .logo {
   gap: 20px;
 }
 
-nav ul li {
-  border: 1px solid #ffbd59;
-  padding: 5px 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.6s ease-in-out, background-color 0.3s ease,
-    color 0.3s ease;
-  font-size: 12px;
-  font-weight: bold;
+nav ul li a {
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+  margin-right: 2rem;
+  position: relative;
 }
-
-nav ul li:hover {
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 16%;
   background: #ffbd59;
-  color: #222;
-  border: 1px solid green;
-  transform: scale(1.1);
+  position: absolute;
+  left: 0;
+  bottom: -30%;
+  transition: 1.2s;
+}
+nav ul li a:hover::after {
+  width: 100%;
 }
 
 /* ---------- BURGER ---------- */
