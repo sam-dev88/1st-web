@@ -211,22 +211,24 @@ nav ul li a:hover::after {
 }
 
 .btn-cv {
-  background: transparent;
-  color: #fff;
-  border: 1px solid #ffbd59;
-  padding: 5px 10px;
+  display: inline-block;
+  background: #222;
+  color: #ffbd59;
+  border-bottom: 1px solid #fff;
+  padding: 5px 8px;
   margin-left: 1rem;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 550;
   text-align: center;
+  font-size: clamp(12px, 1vw, 24px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-/* Hover effect – aligned with CTA */
 .btn-cv:hover {
-  background: #ffbd59;
-  color: #222;
-
+  background: #222;
+  color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0px 2px 5px #fff;
 }
 
 /* --------------------- ABOUT ---------- */
@@ -456,8 +458,7 @@ footer {
     padding-top: 3rem;
   }
   .btn-cv {
-    width: 40%;
-    margin: 1rem auto;
+    margin: 0.5rem auto;
   }
 
   /*-----about---*/

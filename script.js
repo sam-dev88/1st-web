@@ -84,3 +84,43 @@ updateButtonText();
 
 // Run on window resize
 window.addEventListener("resize", updateButtonText);
+
+
+/*-------- Blocks fast bot submits and Blocks autofill bots-----------*/
+const formStartTime = Date.now();
+
+document.querySelector("form").addEventListener("submit", function (e) {
+  const honeypot = document.getElementById("company").value;
+  const timeSpent = (Date.now() - formStartTime) / 1000;
+
+  if (honeypot !== "" || timeSpent < 5) {
+    e.preventDefault();
+    return false;
+  }
+});
+
+
+/*--------This would have blocked the spam you received.-----------*/
+const spamWords = [
+  "telegram",
+  "whatsapp",
+  "million messages",
+  "bulk",
+  "automatically generated",
+  "feedback form",
+  "proposal",
+  "send messages"
+];
+
+document.querySelector("form").addEventListener("submit", function (e) {
+  const msg = document.getElementById("message").value.toLowerCase();
+
+  if (spamWords.some(word => msg.includes(word))) {
+    e.preventDefault();
+    alert("Message blocked.");
+    return false;
+  }
+});
+
+
+
