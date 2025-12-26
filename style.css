@@ -214,8 +214,8 @@ nav ul li a:hover::after {
   display: inline-block;
   background: #222;
   color: #ffbd59;
-  border-bottom: 1.5px solid #fff;
-  padding: 5px 15px;
+  border-bottom: 1.2px solid #fff;
+  padding: 4px 15px;
   margin-left: 1rem;
   border-radius: 10px;
   font-weight: bold;
