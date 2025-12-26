@@ -214,13 +214,13 @@ nav ul li a:hover::after {
   display: inline-block;
   background: #222;
   color: #ffbd59;
-  border-bottom: 1px solid #fff;
-  padding: 5px 8px;
+  border-bottom: 1.5px solid #fff;
+  padding: 5px 15px;
   margin-left: 1rem;
   border-radius: 10px;
-  font-weight: 550;
+  font-weight: bold;
   text-align: center;
-  font-size: clamp(12px, 1vw, 24px);
+  font-size: clamp(15px, 1vw, 24px);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
