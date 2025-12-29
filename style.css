@@ -169,10 +169,12 @@ nav ul li a:hover::after {
 }
 .mobile-menu ul li {
   border-bottom: 1px solid #ffbd59;
-  padding: 5px 5px;
+  padding: 5px;
+  width: 75%;
   justify-content: center;
   display: flex;
   border-radius: 6px;
+
 }
 
 /* ---------- HERO ---------- */
