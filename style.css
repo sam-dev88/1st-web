@@ -165,7 +165,7 @@ nav ul li a:hover::after {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  font-size: 1rem;
+  font-size: 14px;
 }
 .mobile-menu ul li {
   border-bottom: 1px solid #ffbd59;
@@ -177,7 +177,7 @@ nav ul li a:hover::after {
 
 /* ---------- HERO ---------- */
 .hero {
-  background-image: url(Photos/home-profile.jpg);
+  background-image: url(photos/home-profile.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -238,7 +238,7 @@ nav ul li a:hover::after {
 
 /* --------------------- ABOUT ---------- */
 #about {
-  background-image: url(Photos/aboutme-profile.jpg);
+  background-image: url(photos/aboutme-profile.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: scroll;
