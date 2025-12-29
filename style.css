@@ -442,6 +442,15 @@ footer {
   background: #111;
   color: #fff;
 }
+.Cv{
+  color: #ffbd59;
+  text-decoration: underline;
+  transition: transform 0.3s ease-in-out color 0.3s ease-in-out;
+}
+.Cv:hover{
+  color: red;
+  transform: translateY(-3px);
+}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
