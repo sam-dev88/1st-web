@@ -70,20 +70,20 @@ form.addEventListener("submit", (e) => {
 /*-------------------*/
 const button = document.getElementById("button");
 
-function updateButtonText() {
+function updateButtonlength() {
   if (window.innerWidth <= 768) {
     // mobile breakpoint
-    button.innerText = "Send";
+    button.style.width = "100%";
   } else {
-    button.innerText = "Send Message";
+    button.style.width = "auto";
   }
 }
 
 // Run on page load
-updateButtonText();
+updateButtonlength();
 
 // Run on window resize
-window.addEventListener("resize", updateButtonText);
+window.addEventListener("resize", updateButtonlength);
 
 
 /*-------- Blocks fast bot submits and Blocks autofill bots-----------*/
