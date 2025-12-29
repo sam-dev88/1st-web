@@ -150,9 +150,8 @@ nav ul li a:hover::after {
   right: -100%;
   width: 75%;
   height: 100vh;
-  background: #fff;
   padding: 80px 30px;
-  transition: right 0.4s ease;
+  transition: right 0.6s ease-in-out;
   z-index: 999;
 }
 
@@ -169,12 +168,17 @@ nav ul li a:hover::after {
 }
 .mobile-menu ul li {
   border-bottom: 1px solid #ffbd59;
-  padding: 5px;
+  padding: 2px;
   width: 75%;
   justify-content: center;
   display: flex;
   border-radius: 6px;
-
+  transition: transform 0.3s ease-in-out
+}
+.mobile-menu ul li:hover{
+transform: translateY(-2px);
+color: #ffbd59;
+box-shadow: 0px 1px 3px;
 }
 
 /* ---------- HERO ---------- */
