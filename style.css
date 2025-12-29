@@ -451,7 +451,7 @@ footer {
     width: 40%;
   }
   .hero {
-    background-image: url(Photos/mobile-profile.png);
+    background-image: url(photos/mobile-profile.png);
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -488,7 +488,7 @@ footer {
   }
 
   #about {
-    background-image: url(Photos/aboutme-profile-mobile.png);
+    background-image: url(photos/aboutme-profile-mobile.png);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
