@@ -443,12 +443,14 @@ footer {
   color: #fff;
 }
 .Cv{
+  font-size: clamp(14px, 1vw, 16px);
+  font-weight: bold;
   color: #ffbd59;
   text-decoration: underline;
   transition: transform 0.3s ease-in-out color 0.3s ease-in-out;
 }
 .Cv:hover{
-  color: red;
+  color: greenyellow;
   transform: translateY(-3px);
 }
 
