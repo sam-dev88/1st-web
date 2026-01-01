@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 body {
   line-height: 1.6;
@@ -379,7 +382,7 @@ p strong {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #4f46e5;
+  background: #ffbd59;
   color: #fff;
   border: none;
   padding: 12px;
@@ -398,7 +401,8 @@ p strong {
 }
 
 .slide-btn:hover {
-  background: #4338ca;
+  background: #fff;
+  color: #222;
 }
 
 /* ---------- CONTACT ---------- */
@@ -546,3 +550,6 @@ footer {
     margin: 0 auto;
   }
 }
+
+/*---------------------*/
+
