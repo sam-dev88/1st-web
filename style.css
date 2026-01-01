@@ -5,7 +5,7 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -176,12 +176,12 @@ nav ul li a:hover::after {
   justify-content: center;
   display: flex;
   border-radius: 6px;
-  transition: transform 0.3s ease-in-out
+  transition: transform 0.3s ease-in-out;
 }
-.mobile-menu ul li:hover{
-transform: translateY(-2px);
-color: #ffbd59;
-box-shadow: 0px 1px 3px;
+.mobile-menu ul li:hover {
+  transform: translateY(-2px);
+  color: #ffbd59;
+  box-shadow: 0px 1px 3px;
 }
 
 /* ---------- HERO ---------- */
@@ -219,7 +219,8 @@ box-shadow: 0px 1px 3px;
   font-weight: 600;
   font-size: clamp(16px, 1.5vw, 24px);
 }
-.intro p, .about-p{
+.intro p,
+.about-p {
   font-size: clamp(14px, 3.5vw, 16px);
   line-height: 1.6;
 }
@@ -446,14 +447,14 @@ footer {
   background: #111;
   color: #fff;
 }
-.Cv{
+.Cv {
   font-size: clamp(14px, 1vw, 16px);
   font-weight: bold;
   color: #ffbd59;
   text-decoration: underline;
   transition: transform 0.3s ease-in-out color 0.3s ease-in-out;
 }
-.Cv:hover{
+.Cv:hover {
   color: greenyellow;
   transform: translateY(-3px);
 }
@@ -549,7 +550,11 @@ footer {
     width: 70%;
     margin: 0 auto;
   }
+  #msg {
+    color: #fff;
+    display: block;
+    text-align: center;
+  }
 }
 
 /*---------------------*/
-
