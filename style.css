@@ -275,8 +275,19 @@ nav ul li a:hover::after {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
-  z-index: 10000;
+  z-index: 20000;
   pointer-events: auto;
+  overflow-y: auto;
+background: #444;
+ 
+}
+@media (max-width: 768px) {
+  .modal .calendly-inline-widget {
+    height: 85vh;      /* a little smaller than full screen */
+    margin: 10px;      /* margin from screen edges */
+    border-radius: 10px; /* optional: rounded edges */
+    
+  }
 }
 
 /* Close button */
@@ -513,7 +524,9 @@ footer {
   }
   .mobile-menu {
     background-color: #111;
-    width: 57%;
+    width: 47%;
+    display: flex;
+    flex-direction: column;
   }
   .hero {
     background-image: url(photos/mobile-profile.png);
