@@ -1,3 +1,40 @@
+const modal = document.getElementById("calendarModal");
+const close = document.querySelector(".close");
+const menu = document.getElementById("mobileMenu");
+
+// Desktop button
+const openDesktop = document.getElementById("openCalendarDesktop");
+if (openDesktop) {
+  openDesktop.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+}
+
+// Mobile button
+const openMobile = document.getElementById("openCalendarMobile");
+if (openMobile) {
+  openMobile.addEventListener("click", () => {
+    modal.style.display = "block";
+
+    // Close mobile menu if open
+    if (menu && menu.classList.contains("active")) {
+      menu.classList.remove("active");
+    }
+  });
+}
+
+// Close modal
+close.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close when clicking outside modal
+window.addEventListener("click", (e) => {
+  if (e.target === modal) modal.style.display = "none";
+});
+
+/*-----------------------------------------------*/
+
 const slider = document.getElementById("testimonialSlider");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
@@ -85,7 +122,6 @@ updateButtonlength();
 // Run on window resize
 window.addEventListener("resize", updateButtonlength);
 
-
 /*-------- Blocks fast bot submits and Blocks autofill bots-----------*/
 const formStartTime = Date.now();
 
@@ -99,7 +135,6 @@ document.querySelector("form").addEventListener("submit", function (e) {
   }
 });
 
-
 /*--------This would have blocked the spam you received.-----------*/
 const spamWords = [
   "telegram",
@@ -109,24 +144,15 @@ const spamWords = [
   "automatically generated",
   "feedback form",
   "proposal",
-  "send messages"
+  "send messages",
 ];
 
 document.querySelector("form").addEventListener("submit", function (e) {
   const msg = document.getElementById("message").value.toLowerCase();
 
-  if (spamWords.some(word => msg.includes(word))) {
+  if (spamWords.some((word) => msg.includes(word))) {
     e.preventDefault();
     alert("Message blocked.");
     return false;
   }
 });
-
-
-
-
-
-
-
-
-

@@ -88,13 +88,12 @@ nav {
 
 nav .logo {
   box-shadow: 0px 2px 8px #ffbd59;
-  
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 5px;
 }
 
 nav ul li a {
@@ -246,6 +245,48 @@ nav ul li a:hover::after {
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0px 2px 5px #fff;
+}
+
+/* Button */
+#openCalendarDesktop,
+#openCalendarMobile {
+  padding: 5px 12px;
+  border: none;
+  background-color: red;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: clamp(15px, 1vw, 24px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+#openCalendarDesktop:hover, #openCalendarMobile:hover{
+  background: #222;
+  color: #ffbd59;
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 13px #ffbd59;
+  border-top: 1px solid#222;
+}
+
+/* Modal overlay */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10000;
+  pointer-events: auto;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* --------------------- ABOUT ---------- */
@@ -472,7 +513,7 @@ footer {
   }
   .mobile-menu {
     background-color: #111;
-    width: 40%;
+    width: 57%;
   }
   .hero {
     background-image: url(photos/mobile-profile.png);

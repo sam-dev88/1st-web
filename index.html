@@ -32,6 +32,8 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><button id="openCalendarDesktop">Book a Call</button></li>
+
       </ul>
 
       <div class="burger" id="burger">
@@ -50,11 +52,26 @@
       <li><a href="#services" class="mobile-link">Services</a></li>
       <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
       <li><a href="#contact" class="mobile-link">Contact</a></li>
-    </ul>
+    </ul><br>
+    <button id="openCalendarMobile">Book a Call</button>
   </div>
 
   <!-- HERO -->
   <section class="hero" id="home">
+
+    <!-- Custom Modal -->
+    <div id="calendarModal" class="modal">
+      <span class="close">&times;</span>
+
+      <!-- Calendly Embed -->
+      <div class="calendly-inline-widget"
+        data-url="https://calendly.com/samiraomar/30min?hide_gdpr_banner=1&background_color=222222&text_color=ffffff&primary_color=ffbd59"
+        style="min-width: 320px; height: 90vh"></div>
+    </div>
+
+    <!-- Calendly Script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
     <div class="hero-grid">
       <div class="intro">
         <h1 style="color: #fff;">Hi, I’m <span class="hero-name">Samira Omar</span></h1>
