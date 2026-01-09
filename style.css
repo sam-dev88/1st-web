@@ -283,7 +283,6 @@ background: #333;
 }
 @media (max-width: 768px) {
   .modal .calendly-inline-widget {
-    height: 85vh;      /* a little smaller than full screen */
     margin: 10px;      /* margin from screen edges */
     border-radius: 10px; /* optional: rounded edges */
     
