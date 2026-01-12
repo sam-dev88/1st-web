@@ -13,13 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build project
+      - name: Wait for GitHub Pages queue
         run: |
-          echo "No build step needed for plain HTML/CSS/JS"
-
-      - name: Wait for Pages queue
-        run: |
-          echo "Checking GitHub Pages deployment status..."
+          echo "Checking Pages deployment status..."
           for i in {1..20}; do
             STATUS=$(gh api /repos/${{ github.repository }}/pages/deployment-status | jq -r .status)
             echo "Attempt $i: Status = $STATUS"
@@ -30,10 +26,8 @@ jobs:
             sleep 30
           done
 
-          - name: Deploy to GitHub Pages
-          uses: peaceiris/actions-gh-pages@v6.4.0
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./   # root folder since your index.html is at root
-            timeout: 10m
-        
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v6.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./   # root folder
