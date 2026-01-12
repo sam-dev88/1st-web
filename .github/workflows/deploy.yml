@@ -1,5 +1,6 @@
 name: Deploy Website
 
+# Trigger workflow on pushes to main branch
 on:
   push:
     branches:
@@ -8,11 +9,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 15  # Max time allowed for the job
     steps:
+
+      # 1️⃣ Checkout your repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2️⃣ Optional: Wait for any existing Pages deployment
       - name: Wait for GitHub Pages queue
         run: |
           echo "Checking Pages deployment status..."
@@ -26,8 +30,10 @@ jobs:
             sleep 30
           done
 
+      # 3️⃣ Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v6.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./   # root folder
+          publish_dir: ./       # your index.html is in root
+          commit_message: "Auto deploy website 🔥"
