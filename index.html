@@ -32,15 +32,14 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><button id="openCalendarDesktop">Book a Call</button></li>
-
       </ul>
 
       <div class="burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="line1"></span>
+        <span class="line2"></span>
+        <span class="line3"></span>
       </div>
+
     </nav>
   </header>
 
@@ -52,15 +51,15 @@
       <li><a href="#services" class="mobile-link">Services</a></li>
       <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
       <li><a href="#contact" class="mobile-link">Contact</a></li>
-    </ul><br>
-    <button id="openCalendarMobile">Book a Call</button>
+    </ul>
   </div>
 
   <!-- HERO -->
   <section class="hero" id="home">
 
     <!-- Custom Modal -->
-    <div id="calendarModal" class="modal">
+    <div id="calendarModal" class="modal" role="dialog" aria-modal="true">
+
       <span class="close">&times;</span>
 
       <!-- Calendly Embed -->
@@ -78,11 +77,8 @@
         <p><span class="hero-p">Front-end developer and GHL automation specialist.</span> I build websites and automated
           funnels that help local businesses get more leads.
         </p>
-        <a href="#contact" class="btn" id="hero-btn">Let’s Build Your System</a>
-        <a href="photos/my_cv.pdf" download class="btn-cv" target="_blank" rel="noopener noreferrer">
-          Download CV
-        </a>
-
+        <button class="btn open-calendar" type="button">Book a Free Call</button>
+        <p class="cta-note">Free 30-minute Zoom call · No obligation</p>
       </div>
 
       <div>
@@ -104,8 +100,8 @@
           build complete digital systems for local businesses, including fast websites, high-converting funnels, and
           automated workflows that turn visitors into leads and support real business growth.
         </p>
-        <a href="#contact" class="btn">Let’s Build Your System</a>
-
+        <button class="btn open-calendar" type="button">Book a Free Call</button>
+        <p class="cta-note">Free 30-minute Zoom call · No obligation</p>
 
         <p style="line-height: 3;  margin-top: 1rem;"><strong>Follow Me:</strong>
 
@@ -186,7 +182,7 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- TESTIMONIALS 
   <section id="testimonials">
     <h2>Testimonials</h2>
     <div class="testimonial-container">
@@ -199,7 +195,7 @@
       </div>
       <button class="slide-btn right" id="nextBtn">&#10095;</button>
     </div>
-  </section>
+  </section>-->
 
   <!-- CONTACT -->
   <section id="contact">
@@ -273,8 +269,8 @@
 
   <!-- FOOTER -->
   <footer>© 2025 SAMIRA OMAR /
+    <button class="open-calendar link-style">Let’s Talk</button>
 
-    <a href="photos/my-resume.pdf" download class="Cv">Download CV (PDF)</a>
   </footer>
 
 

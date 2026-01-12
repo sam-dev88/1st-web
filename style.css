@@ -6,7 +6,7 @@
   font-family: sans-serif;
 }
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -48,8 +48,12 @@ h3 {
 p {
   margin-bottom: 16px;
 }
-
+#book {
+  padding: 6px 12px;
+  font-size: 14px;
+}
 .btn {
+  width: 100%;
   font-size: clamp(14px, 1.2vw, 24px);
   display: inline-block;
   padding: 10px 24px;
@@ -120,19 +124,8 @@ nav ul li a:hover::after {
 }
 
 /* ---------- BURGER ---------- */
-/* Burger X animation */
-.burger.toggle .line1 {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-.burger.toggle .line2 {
-  opacity: 0;
-}
-.burger.toggle .line3 {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
 .burger {
-  display: none;
+  display: none; /* show only on mobile */
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -146,7 +139,18 @@ nav ul li a:hover::after {
   transition: 0.3s;
 }
 
-/* ---------- MOBILE MENU ---------- */
+/* Burger X animation */
+.burger.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.burger.toggle .line2 {
+  opacity: 0;
+}
+.burger.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* MOBILE MENU */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -154,8 +158,11 @@ nav ul li a:hover::after {
   width: 75%;
   height: 100vh;
   padding: 80px 30px;
-  transition: right 0.6s ease-in-out;
+  background-color: #111;
+  transition: right 0.5s ease-in-out;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
 }
 
 .mobile-menu.active {
@@ -169,19 +176,30 @@ nav ul li a:hover::after {
   gap: 24px;
   font-size: 14px;
 }
+
 .mobile-menu ul li {
   border-bottom: 1px solid #ffbd59;
-  padding: 2px;
-  width: 75%;
-  justify-content: center;
+  padding: 8px 0;
   display: flex;
+  justify-content: center;
   border-radius: 6px;
   transition: transform 0.3s ease-in-out;
 }
+
 .mobile-menu ul li:hover {
   transform: translateY(-2px);
   color: #ffbd59;
-  box-shadow: 0px 1px 3px;
+  box-shadow: 0px 1px 3px #ffbd59;
+}
+
+/* SHOW BURGER ON MOBILE */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+  }
 }
 
 /* ---------- HERO ---------- */
@@ -225,25 +243,16 @@ nav ul li a:hover::after {
   line-height: 1.6;
 }
 
-.btn-cv {
-  display: inline-block;
-  background: #222;
+/* CTA Note under buttons */
+.intro .cta-note {
+  display: block;
+  line-height: 1.4;
+  margin-top: 1rem;
+  font-size: clamp(14px, 1vw, 22px);
   color: #ffbd59;
-  border-bottom: 1.2px solid #fff;
-  padding: 4px 15px;
-  margin-left: 1rem;
-  border-radius: 10px;
-  font-weight: bold;
-  text-align: center;
-  font-size: clamp(15px, 1vw, 24px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-.btn-cv:hover {
-  background: #222;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0px 2px 5px #fff;
+  text-align: justify;
+  font-weight: 400;
+  margin: 1rem auto;
 }
 
 /* Button */
@@ -278,7 +287,7 @@ nav ul li a:hover::after {
   z-index: 20000;
   pointer-events: auto;
   overflow-y: auto;
-  background: #333;
+  background: #555;
 }
 @media (max-width: 768px) {
   .modal .calendly-inline-widget {
@@ -293,7 +302,7 @@ nav ul li a:hover::after {
   top: 10px;
   right: 16px;
   font-size: 30px;
-  color: #fff;
+  color: darkkhaki;
   cursor: pointer;
 }
 
@@ -322,7 +331,7 @@ p strong {
 .social-icons a {
   border-radius: 10px;
   display: inline-block;
-  font-size: 40px;
+  font-size: 25px;
   box-shadow: 0px 0px 10px #ffbd59;
   color: #ffbd59;
   margin: 0 0.5rem;
@@ -490,6 +499,9 @@ textarea {
 #msg {
   color: #ffbd59;
 }
+form .btn {
+  width: 100%;
+}
 
 /* ---------- FOOTER ---------- */
 footer {
@@ -498,18 +510,20 @@ footer {
   background: #111;
   color: #fff;
 }
-.Cv {
-  font-size: clamp(14px, 1vw, 16px);
+.link-style {
+  font-size: clamp(15px, 1vw, 24px);
   font-weight: bold;
+  background: none;
+  border: none;
   color: #ffbd59;
+  cursor: pointer;
   text-decoration: underline;
   transition: transform 0.3s ease-in-out color 0.3s ease-in-out;
 }
-.Cv:hover {
+.link-style:hover {
   color: greenyellow;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
-
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
   .nav-links {
@@ -538,9 +552,6 @@ footer {
   .intro h2 {
     padding-top: 3rem;
   }
-  .btn-cv {
-    margin: 0.5rem auto;
-  }
 
   /*-----about---*/
   #intro-about {
@@ -550,6 +561,15 @@ footer {
     align-items: center;
     width: 100%;
     padding: 1rem;
+  }
+  #about .intro button {
+    width: 85%;
+  }
+  #about .intro .cta-note {
+    margin-top: 0;
+  }
+  #home .intro button {
+    width: 100%;
   }
   #intro-about p {
     padding: 1rem;
@@ -609,5 +629,3 @@ footer {
     text-align: center;
   }
 }
-
-/*---------------------*/

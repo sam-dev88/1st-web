@@ -1,70 +1,54 @@
+/* ----------------- MODAL CALENDLY ----------------- */
 const modal = document.getElementById("calendarModal");
-const close = document.querySelector(".close");
-const menu = document.getElementById("mobileMenu");
+const closeBtn = document.querySelector(".close");
 
-// Desktop button
-const openDesktop = document.getElementById("openCalendarDesktop");
-if (openDesktop) {
-  openDesktop.addEventListener("click", () => {
-    modal.style.display = "block";
-  });
-}
+// Get ALL buttons that open Calendly
+const calendarButtons = document.querySelectorAll(".open-calendar");
 
-// Mobile button
-const openMobile = document.getElementById("openCalendarMobile");
-if (openMobile) {
-  openMobile.addEventListener("click", () => {
+calendarButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
     modal.style.display = "block";
 
     // Close mobile menu if open
-    if (menu && menu.classList.contains("active")) {
-      menu.classList.remove("active");
+    if (mobileMenu.classList.contains("active")) {
+      mobileMenu.classList.remove("active");
+      burger.classList.remove("toggle");
     }
+  });
+});
+
+// Close modal (X button)
+if (closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
   });
 }
 
-// Close modal
-close.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
 // Close when clicking outside modal
 window.addEventListener("click", (e) => {
-  if (e.target === modal) modal.style.display = "none";
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
 });
 
-/*-----------------------------------------------*/
-
-const slider = document.getElementById("testimonialSlider");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-
-const scrollAmount = 300; // Adjust scroll distance
-
-nextBtn.addEventListener("click", () => {
-  slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
-});
-
-prevBtn.addEventListener("click", () => {
-  slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-});
-
+/* ----------------- BURGER & MOBILE MENU ----------------- */
 const burger = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileLinks = document.querySelectorAll(".mobile-link");
 
 burger.addEventListener("click", () => {
-  mobileMenu.classList.toggle("active"); // toggle menu
-  burger.classList.toggle("toggle"); // toggle X animation
+  mobileMenu.classList.toggle("active"); // slide menu
+  burger.classList.toggle("toggle"); // X animation
 });
 
 mobileLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
+    mobileMenu.classList.remove("active"); // close menu
+    burger.classList.remove("toggle"); // reset burger
   });
 });
 
-// Smooth scroll
+/* ----------------- SMOOTH SCROLL ----------------- */
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -74,7 +58,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-/*---------- Contact Form ------------*/
+/* ----------------- CONTACT FORM ----------------- */
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbxdA6bSYEXA_P6u8RPA4c2hZvuPPf07vWrYyQrSLqv3lzCOj6BRJJKeaV_Z_zMdIKlQYQ/exec";
 
@@ -83,20 +67,14 @@ const msg = document.getElementById("msg");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
   msg.innerHTML = "Sending message...";
 
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Server returned ${response.status}`); // ✅ fixed
-      }
-
+      if (!response.ok) throw new Error(`Server returned ${response.status}`);
       msg.innerHTML = "✅ Message sent successfully!";
       form.reset();
-      setTimeout(() => {
-        msg.innerHTML = "";
-      }, 3000);
+      setTimeout(() => (msg.innerHTML = ""), 3000);
     })
     .catch((error) => {
       console.error("Form submit error:", error);
@@ -104,25 +82,7 @@ form.addEventListener("submit", (e) => {
     });
 });
 
-/*-------------------*/
-const button = document.getElementById("button");
-
-function updateButtonlength() {
-  if (window.innerWidth <= 768) {
-    // mobile breakpoint
-    button.style.width = "100%";
-  } else {
-    button.style.width = "auto";
-  }
-}
-
-// Run on page load
-updateButtonlength();
-
-// Run on window resize
-window.addEventListener("resize", updateButtonlength);
-
-/*-------- Blocks fast bot submits and Blocks autofill bots-----------*/
+/* ----------------- ANTI-SPAM ----------------- */
 const formStartTime = Date.now();
 
 document.querySelector("form").addEventListener("submit", function (e) {
@@ -133,26 +93,54 @@ document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
     return false;
   }
-});
 
-/*--------This would have blocked the spam you received.-----------*/
-const spamWords = [
-  "telegram",
-  "whatsapp",
-  "million messages",
-  "bulk",
-  "automatically generated",
-  "feedback form",
-  "proposal",
-  "send messages",
-];
+  const spamWords = [
+    "telegram",
+    "whatsapp",
+    "million messages",
+    "bulk",
+    "automatically generated",
+    "feedback form",
+    "proposal",
+    "send messages",
+  ];
 
-document.querySelector("form").addEventListener("submit", function (e) {
-  const msg = document.getElementById("message").value.toLowerCase();
-
-  if (spamWords.some((word) => msg.includes(word))) {
+  const msgVal = document.getElementById("message").value.toLowerCase();
+  if (spamWords.some((word) => msgVal.includes(word))) {
     e.preventDefault();
     alert("Message blocked.");
     return false;
   }
+});
+
+/* ----------------- TESTIMONIAL SLIDER ----------------- */
+const slider = document.getElementById("testimonialSlider");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const scrollAmount = 300;
+
+nextBtn?.addEventListener("click", () => {
+  slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+});
+prevBtn?.addEventListener("click", () => {
+  slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const id = link.getAttribute("href");
+    const target = document.querySelector(id);
+    if (!target) return;
+
+    // FORCE instant jump (no smooth scroll)
+    document.documentElement.style.scrollBehavior = "auto";
+    target.scrollIntoView({ behavior: "auto" });
+
+    // restore default (optional, safe)
+    setTimeout(() => {
+      document.documentElement.style.scrollBehavior = "";
+    }, 0);
+  });
 });
