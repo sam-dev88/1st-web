@@ -1,0 +1,38 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build project
+        run: |
+          echo "No build step needed for plain HTML/CSS/JS"
+
+      - name: Wait for Pages queue
+        run: |
+          echo "Checking GitHub Pages deployment status..."
+          for i in {1..20}; do
+            STATUS=$(gh api /repos/${{ github.repository }}/pages/deployment-status | jq -r .status)
+            echo "Attempt $i: Status = $STATUS"
+            if [ "$STATUS" != "deployment_queued" ]; then
+              echo "Pages queue cleared."
+              break
+            fi
+            sleep 30
+          done
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          timeout: 10m
