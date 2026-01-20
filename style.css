@@ -156,14 +156,15 @@ nav ul li a:hover::after {
   top: 0;
   right: -100%;
   width: 40%;
-  height: 50vh;
-  background: #111;
+  height: 47vh;
+  background: #222;
   border-radius: 20px 0px 0px 20px;
-  padding: 80px 15px;
+  padding: 85px 15px;
   transition: right 0.5s ease-in-out;
   z-index: 999;
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 4px 20px #111;
 }
 
 .mobile-menu.active {
@@ -182,7 +183,7 @@ nav ul li a:hover::after {
   padding: 4px 0;
   justify-content: center;
   transition: transform 0.3s ease-in-out;
-  border-bottom: 2px solid #ffbd59;
+  border-bottom: 1px solid #ffbd59;
   width: 100%;
   text-align: center;
 }
@@ -190,9 +191,7 @@ nav ul li a:hover::after {
 .mobile-menu ul li:hover {
   transform: translateY(-2px);
   color: #ffbd59;
- 
 }
-
 
 /* SHOW BURGER ON MOBILE */
 @media (max-width: 768px) {
